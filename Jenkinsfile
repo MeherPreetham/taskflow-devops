@@ -9,6 +9,8 @@ spec:
   - name: jnlp
     image: jenkins-agent-docker-kubectl:latest
     imagePullPolicy: Never
+    securityContext:
+      runAsUser: 0
     volumeMounts:
     - name: docker-sock
       mountPath: /var/run/docker.sock
